@@ -3,5 +3,6 @@
     <pages>
         <page name='struct_learning'/>
         <page name='function_type'/>
+        <page name='OptionalsDemo'/>
     </pages>
 </playground>
