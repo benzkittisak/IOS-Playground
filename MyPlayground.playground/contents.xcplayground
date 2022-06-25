@@ -5,5 +5,6 @@
         <page name='function_type'/>
         <page name='OptionalsDemo'/>
         <page name='ClosuresDemo'/>
+        <page name='ExtensionDemo'/>
     </pages>
 </playground>
