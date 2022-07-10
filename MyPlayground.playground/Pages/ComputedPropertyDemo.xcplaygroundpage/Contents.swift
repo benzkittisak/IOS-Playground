@@ -17,3 +17,19 @@ var numberOfSlices2 :Int {
 
 // จะเห็นว่าตัวแปรมันอัปเดตให้อัตโนมัติเลยเมื่อตัวแปรที่เราใช้ในการคำนวณมันมีการเปลี่ยนแปลง
 print(numberOfSlices2)
+
+// แล้วถ้าเราจะเขียนตัว setter ล่ะเราจะทำยังไง
+// ตัว setter จะช่วยให้เราสามารถกำหนค่าใหม่กับตัว comeputed property ได้นั่นเอง
+var numberOfSlices3:Int {
+    get{
+        return pizzaInInches - 4
+    }
+    set{
+        numberOfSlices3 = newValue
+        print("numberOfSlice4 now has a new value which is \(newValue)")
+    }
+}
+
+// วิธีใช้ setter ก็ง่ายๆ  ก็คือเรากำหนดค่าตัวแปรให้มันใหม่ก็แค่นั้นแหละ
+numberOfSlices3 = 12
+print(numberOfSlices3)
