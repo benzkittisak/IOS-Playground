@@ -72,3 +72,68 @@ print(paper)
 print(totalPrice)
 // จะเห็นว่าข้อมูลมันจะมีการเปลี่ยนแปลงไปตามที่ calculatePrice มันคำนวณออกมาได้
 
+
+//MARK: - Observer
+/*
+ เราจะมาเรียนรู้เรื่องของ Observer กันต่อ อะไรคือ Observer
+ property ที่เป็น Observer คือจะเป็นตัวที่ตอบสนองต่อเหตุการณ์ต่าง ๆ เช่น มีการเปลี่ยนแปลงค่าภายในตัวแปรไหม ถ้ามีก่อนที่จะเปลี่ยนจะให้ทำอะไร (willSet)
+ แล้วหลังเปลี่ยนจะให้ทำอะไร (didSet) เช่น
+ */
+
+var totalScore:Int = 0 {
+    willSet{
+        print("คะแนนเก่าคือ \(totalScore)")
+    }
+    didSet{
+        print("คะแนนใหม่คือ \(totalScore)")
+    }
+}
+
+print(totalScore)
+
+// แล้วถ้าเราเปลี่ยนค่า สังเกตสิ่งที่เกิดขึ้นในคอนโซลเอาละกัน
+totalScore = 10
+print(totalScore)
+
+// หรือเราสามารถเอานางมาเช็คได้ว่าถ้้าหากกรอกคะแนนเกิน 100 ให้นางแสดงข้อความว่า ใส่คะแนนเกิน 100 แล้วให้มันเซ็ตค่าคะแนนที่ 100 เลย
+
+var totalScore2:Int = 0 {
+    willSet{
+        print("คะแนนเก่าคือ \(totalScore)")
+    }
+    didSet{
+        if totalScore2 > 100 {
+            print("ไม่สามารถกรอกคะแนนเกิน 100 ได้ , ทำการเปลี่ยนค่าคะแนนจาก \(totalScore2) เป็น 100 ให้แล้ว")
+            totalScore2 = 100
+        }
+    }
+}
+
+totalScore2 = 104
+print(totalScore2)
+
+//MARK: - challenge time !!
+
+var width:Float = 1.5
+var height:Float = 2.3
+
+// ให้ทำการเขียนโค้ดคำนวนว่า จะต้องใช้ถังสีที่ถังถึงจะทาสีได้ทั้งห้อง
+// กำหนดให้ถังสี 1 ถังทาสีได้ 1.5
+var bucketOfPaint:Int {
+    get{
+        let area = width * height
+        let areaCoverPerBucket:Float = 1.5
+        let numberOfBuckets = area / areaCoverPerBucket
+        return Int(numberOfBuckets.rounded(.up))
+    }
+//    อันนี้ชาเล้นข้อ 2 คือ ถ้าเราใส่ค่ามา เช่นใส่จำนวนถังสีมา ให้มันคำนวณว่าจะสามารถทาสีได้พื้นที่เท่าไหร่
+    set{
+        let areaCanCover = Float(newValue) * 1.5
+        print("สามารถทาสีได้ \(areaCanCover) ตารางเมตร")
+    }
+}
+
+print(bucketOfPaint)
+
+// ลองการบ้านข้อ2
+bucketOfPaint = 4
