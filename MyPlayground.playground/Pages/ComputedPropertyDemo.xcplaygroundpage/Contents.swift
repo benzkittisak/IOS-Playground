@@ -10,6 +10,7 @@ print(numberOfSlices)
 numberOfSlices = 4
 
 // เราก็จะใช้ตัว computed perpoty กันรูปแบบการใช้งานก็จะเป็นแบบนิ้
+// อันนี้เค้าเรียก getter เพราะว่าเราไปเอาค่าของตัวแปรอื่นมาคำนวณ ไม่ได้มีการ set ค่าให้ตัวแปรใหม่
 var numberOfSlices2 :Int {
     return pizzaInInches - 4
 }
