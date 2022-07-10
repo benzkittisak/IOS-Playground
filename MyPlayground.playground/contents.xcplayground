@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+<playground version='6.0' target-platform='macos' buildActiveScheme='true' executeOnSourceChanges='true' importAppTypes='true'>
     <pages>
         <page name='struct_learning'/>
         <page name='function_type'/>
         <page name='OptionalsDemo'/>
         <page name='ClosuresDemo'/>
         <page name='ExtensionDemo'/>
+        <page name='ComputedPropertyDemo'/>
     </pages>
 </playground>
